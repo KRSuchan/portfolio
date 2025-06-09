@@ -111,7 +111,7 @@ export default function Portfolio() {
                     </div>
                     <div className="space-y-4">
                         <h1 className="text-4xl md:text-6xl font-bold tracking-tight">
-                            Hi, I'm{" "}
+                            Hi, I&apos;m{" "}
                             <span className="text-primary">John Doe</span>
                         </h1>
                         <p className="text-xl md:text-2xl text-muted-foreground max-w-2xl">
@@ -149,9 +149,10 @@ export default function Portfolio() {
                                 functional web applications.
                             </p>
                             <p className="text-lg text-muted-foreground leading-relaxed">
-                                When I'm not coding, you can find me exploring
-                                new technologies, contributing to open-source
-                                projects, or enjoying the great outdoors.
+                                When I&apos;m not coding, you can find me
+                                exploring new technologies, contributing to
+                                open-source projects, or enjoying the great
+                                outdoors.
                             </p>
                             <div className="flex gap-4">
                                 <Button variant="outline">
