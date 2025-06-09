@@ -43,7 +43,7 @@ export default function Portfolio() {
             tech: ["Next.js", "Stripe", "PostgreSQL", "Tailwind CSS"],
             github: "#",
             live: "#",
-            image: "/placeholder.svg?height=200&width=300",
+            image: "/placeholder.svg",
         },
         {
             title: "Task Management App",
@@ -52,7 +52,7 @@ export default function Portfolio() {
             tech: ["React", "Node.js", "Socket.io", "MongoDB"],
             github: "#",
             live: "#",
-            image: "/placeholder.svg?height=200&width=300",
+            image: "/placeholder.svg",
         },
         {
             title: "Weather Dashboard",
@@ -61,7 +61,7 @@ export default function Portfolio() {
             tech: ["Vue.js", "D3.js", "Express", "Weather API"],
             github: "#",
             live: "#",
-            image: "/placeholder.svg?height=200&width=300",
+            image: "/placeholder.svg",
         },
     ];
 
@@ -104,7 +104,7 @@ export default function Portfolio() {
                 <div className="flex flex-col items-center text-center space-y-8">
                     <div className="relative w-[150px] h-[150px]">
                         <Image
-                            src="/portfolio/profile-placeholder.jpeg"
+                            src="/profile-placeholder.jpeg"
                             alt="Profile"
                             fill
                             className="rounded-full border-4 border-primary/20 object-cover object-top"
