@@ -101,18 +101,21 @@ export default function Portfolio() {
             <section className="container py-24 md:py-32">
                 <div className="flex flex-col items-center text-center space-y-8">
                     <div className="relative">
+                        <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-primary/10 rounded-full blur-2xl" />
                         <Image
                             src="/placeholder.svg?height=150&width=150"
                             alt="Profile"
                             width={150}
                             height={150}
-                            className="rounded-full border-4 border-primary/20"
+                            className="rounded-full border-4 border-primary/20 relative z-10"
                         />
                     </div>
                     <div className="space-y-4">
                         <h1 className="text-4xl md:text-6xl font-bold tracking-tight">
                             Hi, I&apos;m{" "}
-                            <span className="text-primary">John Doe</span>
+                            <span className="text-primary bg-clip-text text-transparent bg-gradient-to-r from-primary to-primary/80">
+                                John Doe
+                            </span>
                         </h1>
                         <p className="text-xl md:text-2xl text-muted-foreground max-w-2xl">
                             I&apos;m a full-stack developer with a passion for
@@ -124,11 +127,18 @@ export default function Portfolio() {
                         </div>
                     </div>
                     <div className="flex gap-4">
-                        <Button size="lg">
+                        <Button
+                            size="lg"
+                            className="bg-primary hover:bg-primary/90"
+                        >
                             <Mail className="w-4 h-4 mr-2" />
                             Get In Touch
                         </Button>
-                        <Button variant="outline" size="lg">
+                        <Button
+                            variant="outline"
+                            size="lg"
+                            className="border-primary/20 hover:bg-primary/5"
+                        >
                             <Github className="w-4 h-4 mr-2" />
                             GitHub
                         </Button>
@@ -155,11 +165,17 @@ export default function Portfolio() {
                                 outdoors.
                             </p>
                             <div className="flex gap-4">
-                                <Button variant="outline">
+                                <Button
+                                    variant="outline"
+                                    className="border-primary/20 hover:bg-primary/5"
+                                >
                                     <Linkedin className="w-4 h-4 mr-2" />
                                     LinkedIn
                                 </Button>
-                                <Button variant="outline">
+                                <Button
+                                    variant="outline"
+                                    className="border-primary/20 hover:bg-primary/5"
+                                >
                                     <Github className="w-4 h-4 mr-2" />
                                     GitHub
                                 </Button>
@@ -174,7 +190,7 @@ export default function Portfolio() {
                                     <Badge
                                         key={skill}
                                         variant="secondary"
-                                        className="text-sm"
+                                        className="text-sm bg-primary/5 hover:bg-primary/10"
                                     >
                                         {skill}
                                     </Badge>
@@ -195,7 +211,7 @@ export default function Portfolio() {
                         {projects.map((project, index) => (
                             <Card
                                 key={index}
-                                className="overflow-hidden hover:shadow-lg transition-shadow"
+                                className="overflow-hidden hover:shadow-lg transition-shadow border-primary/20"
                             >
                                 <div className="aspect-video relative overflow-hidden">
                                     <Image
@@ -214,6 +230,7 @@ export default function Portfolio() {
                                             <Button
                                                 variant="ghost"
                                                 size="icon"
+                                                className="hover:bg-primary/5"
                                                 asChild
                                             >
                                                 <Link href={project.github}>
@@ -223,6 +240,7 @@ export default function Portfolio() {
                                             <Button
                                                 variant="ghost"
                                                 size="icon"
+                                                className="hover:bg-primary/5"
                                                 asChild
                                             >
                                                 <Link href={project.live}>
@@ -241,7 +259,7 @@ export default function Portfolio() {
                                             <Badge
                                                 key={tech}
                                                 variant="outline"
-                                                className="text-xs"
+                                                className="text-xs border-primary/20 hover:bg-primary/5"
                                             >
                                                 {tech}
                                             </Badge>
@@ -265,14 +283,17 @@ export default function Portfolio() {
                         exciting projects.
                     </p>
                     <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                        <Button size="lg" className="flex-1 sm:flex-none">
+                        <Button
+                            size="lg"
+                            className="bg-primary hover:bg-primary/90"
+                        >
                             <Mail className="w-4 h-4 mr-2" />
                             Send Email
                         </Button>
                         <Button
                             variant="outline"
                             size="lg"
-                            className="flex-1 sm:flex-none"
+                            className="border-primary/20 hover:bg-primary/5"
                         >
                             <Download className="w-4 h-4 mr-2" />
                             Download Resume
@@ -282,9 +303,9 @@ export default function Portfolio() {
             </section>
 
             {/* Footer */}
-            <footer className="border-t py-8">
-                <div className="container text-center text-muted-foreground">
-                    <p>&copy; 2024 John Doe. All rights reserved.</p>
+            <footer className="border-t border-primary/20">
+                <div className="container py-8 text-center text-sm text-muted-foreground">
+                    <p>© 2024 John Doe. All rights reserved.</p>
                 </div>
             </footer>
         </div>
