@@ -102,13 +102,12 @@ export default function Portfolio() {
             {/* Hero Section */}
             <section className="container py-24 md:py-32">
                 <div className="flex flex-col items-center text-center space-y-8">
-                    <div className="relative">
+                    <div className="relative w-[150px] h-[150px]">
                         <Image
-                            src="/portfolio/profile-placeholder.svg"
+                            src="/portfolio/profile-placeholder.jpeg"
                             alt="Profile"
-                            width={150}
-                            height={150}
-                            className="rounded-full border-4 border-primary/20"
+                            fill
+                            className="rounded-full border-4 border-primary/20 object-cover object-top"
                         />
                     </div>
                     <div className="space-y-4">
@@ -203,8 +202,7 @@ export default function Portfolio() {
                                 <div className="relative aspect-video overflow-hidden">
                                     <Image
                                         src={
-                                            project.image ||
-                                            "/portfolio/placeholder.svg"
+                                            project.image || "/placeholder.svg"
                                         }
                                         alt={project.title}
                                         fill
