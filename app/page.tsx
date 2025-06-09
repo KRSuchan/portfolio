@@ -286,7 +286,7 @@ export default function Portfolio() {
             {/* Footer */}
             <footer className="border-t py-8">
                 <div className="container text-center text-muted-foreground">
-                    <p>&copy; 2024 John Doe. All rights reserved.</p>
+                    <p>&copy; 2025 John Doe. All rights reserved.</p>
                 </div>
             </footer>
         </div>
