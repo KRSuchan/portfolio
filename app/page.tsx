@@ -19,6 +19,7 @@ import {
 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { ThemeToggle } from "@/components/theme-toggle";
 
 export default function Portfolio() {
     const skills = [
@@ -70,7 +71,7 @@ export default function Portfolio() {
             <nav className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
                 <div className="container flex h-16 items-center justify-between">
                     <div className="font-bold text-xl">John Doe</div>
-                    <div className="hidden md:flex items-center space-x-6">
+                    <div className="flex items-center space-x-6">
                         <Link
                             href="#about"
                             className="text-sm font-medium hover:text-primary transition-colors"
@@ -89,6 +90,7 @@ export default function Portfolio() {
                         >
                             Contact
                         </Link>
+                        <ThemeToggle />
                         <Button variant="outline" size="sm">
                             <Download className="w-4 h-4 mr-2" />
                             Resume
@@ -101,25 +103,22 @@ export default function Portfolio() {
             <section className="container py-24 md:py-32">
                 <div className="flex flex-col items-center text-center space-y-8">
                     <div className="relative">
-                        <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-primary/10 rounded-full blur-2xl" />
                         <Image
-                            src="/placeholder.svg?height=150&width=150"
+                            src="/profile-placeholder.svg"
                             alt="Profile"
                             width={150}
                             height={150}
-                            className="rounded-full border-4 border-primary/20 relative z-10"
+                            className="rounded-full border-4 border-primary/20"
                         />
                     </div>
                     <div className="space-y-4">
                         <h1 className="text-4xl md:text-6xl font-bold tracking-tight">
-                            Hi, I&apos;m{" "}
-                            <span className="text-primary bg-clip-text text-transparent bg-gradient-to-r from-primary to-primary/80">
-                                John Doe
-                            </span>
+                            Hi, I'm{" "}
+                            <span className="text-primary">John Doe</span>
                         </h1>
                         <p className="text-xl md:text-2xl text-muted-foreground max-w-2xl">
-                            I&apos;m a full-stack developer with a passion for
-                            building beautiful and functional web applications.
+                            Full-Stack Developer passionate about creating
+                            beautiful, functional web applications
                         </p>
                         <div className="flex items-center justify-center gap-2 text-muted-foreground">
                             <MapPin className="w-4 h-4" />
@@ -127,18 +126,11 @@ export default function Portfolio() {
                         </div>
                     </div>
                     <div className="flex gap-4">
-                        <Button
-                            size="lg"
-                            className="bg-primary hover:bg-primary/90"
-                        >
+                        <Button size="lg">
                             <Mail className="w-4 h-4 mr-2" />
                             Get In Touch
                         </Button>
-                        <Button
-                            variant="outline"
-                            size="lg"
-                            className="border-primary/20 hover:bg-primary/5"
-                        >
+                        <Button variant="outline" size="lg">
                             <Github className="w-4 h-4 mr-2" />
                             GitHub
                         </Button>
@@ -155,27 +147,22 @@ export default function Portfolio() {
                     <div className="grid md:grid-cols-2 gap-12 items-center">
                         <div className="space-y-6">
                             <p className="text-lg text-muted-foreground leading-relaxed">
-                                I&apos;m passionate about creating beautiful and
-                                functional web applications.
+                                I'm a passionate full-stack developer with over
+                                5 years of experience building web applications.
+                                I love turning complex problems into simple,
+                                beautiful designs.
                             </p>
                             <p className="text-lg text-muted-foreground leading-relaxed">
-                                When I&apos;m not coding, you can find me
-                                exploring new technologies, contributing to
-                                open-source projects, or enjoying the great
-                                outdoors.
+                                When I'm not coding, you can find me exploring
+                                new technologies, contributing to open-source
+                                projects, or enjoying the great outdoors.
                             </p>
                             <div className="flex gap-4">
-                                <Button
-                                    variant="outline"
-                                    className="border-primary/20 hover:bg-primary/5"
-                                >
+                                <Button variant="outline">
                                     <Linkedin className="w-4 h-4 mr-2" />
                                     LinkedIn
                                 </Button>
-                                <Button
-                                    variant="outline"
-                                    className="border-primary/20 hover:bg-primary/5"
-                                >
+                                <Button variant="outline">
                                     <Github className="w-4 h-4 mr-2" />
                                     GitHub
                                 </Button>
@@ -190,7 +177,7 @@ export default function Portfolio() {
                                     <Badge
                                         key={skill}
                                         variant="secondary"
-                                        className="text-sm bg-primary/5 hover:bg-primary/10"
+                                        className="text-sm"
                                     >
                                         {skill}
                                     </Badge>
@@ -211,9 +198,9 @@ export default function Portfolio() {
                         {projects.map((project, index) => (
                             <Card
                                 key={index}
-                                className="overflow-hidden hover:shadow-lg transition-shadow border-primary/20"
+                                className="overflow-hidden hover:shadow-lg transition-shadow"
                             >
-                                <div className="aspect-video relative overflow-hidden">
+                                <div className="relative aspect-video overflow-hidden">
                                     <Image
                                         src={
                                             project.image || "/placeholder.svg"
@@ -230,7 +217,6 @@ export default function Portfolio() {
                                             <Button
                                                 variant="ghost"
                                                 size="icon"
-                                                className="hover:bg-primary/5"
                                                 asChild
                                             >
                                                 <Link href={project.github}>
@@ -240,7 +226,6 @@ export default function Portfolio() {
                                             <Button
                                                 variant="ghost"
                                                 size="icon"
-                                                className="hover:bg-primary/5"
                                                 asChild
                                             >
                                                 <Link href={project.live}>
@@ -259,7 +244,7 @@ export default function Portfolio() {
                                             <Badge
                                                 key={tech}
                                                 variant="outline"
-                                                className="text-xs border-primary/20 hover:bg-primary/5"
+                                                className="text-xs"
                                             >
                                                 {tech}
                                             </Badge>
@@ -276,24 +261,22 @@ export default function Portfolio() {
             <section id="contact" className="container py-16">
                 <div className="max-w-2xl mx-auto text-center">
                     <h2 className="text-3xl font-bold mb-8">
-                        Let&apos;s Work Together
+                        Let's Work Together
                     </h2>
                     <p className="text-lg text-muted-foreground mb-8">
-                        I&apos;m always looking for new opportunities to work on
-                        exciting projects.
+                        I'm always interested in new opportunities and exciting
+                        projects. Let's discuss how we can bring your ideas to
+                        life.
                     </p>
                     <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                        <Button
-                            size="lg"
-                            className="bg-primary hover:bg-primary/90"
-                        >
+                        <Button size="lg" className="flex-1 sm:flex-none">
                             <Mail className="w-4 h-4 mr-2" />
                             Send Email
                         </Button>
                         <Button
                             variant="outline"
                             size="lg"
-                            className="border-primary/20 hover:bg-primary/5"
+                            className="flex-1 sm:flex-none"
                         >
                             <Download className="w-4 h-4 mr-2" />
                             Download Resume
@@ -303,9 +286,9 @@ export default function Portfolio() {
             </section>
 
             {/* Footer */}
-            <footer className="border-t border-primary/20">
-                <div className="container py-8 text-center text-sm text-muted-foreground">
-                    <p>© 2024 John Doe. All rights reserved.</p>
+            <footer className="border-t py-8">
+                <div className="container text-center text-muted-foreground">
+                    <p>&copy; 2024 John Doe. All rights reserved.</p>
                 </div>
             </footer>
         </div>
