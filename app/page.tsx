@@ -112,8 +112,7 @@ export default function Portfolio() {
                     </div>
                     <div className="space-y-4">
                         <h1 className="text-4xl md:text-6xl font-bold tracking-tight">
-                            Hi, I'm{" "}
-                            <span className="text-primary">John Doe</span>
+                            Hi, I'm <span className="text-primary">이수찬</span>
                         </h1>
                         <p className="text-xl md:text-2xl text-muted-foreground max-w-2xl">
                             Full-Stack Developer passionate about creating
