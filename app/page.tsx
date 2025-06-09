@@ -258,7 +258,7 @@ export default function Portfolio() {
             <section id="contact" className="container py-16">
                 <div className="max-w-2xl mx-auto text-center">
                     <h2 className="text-3xl font-bold mb-8">
-                        Let's Work Together
+                        Let&apos;s Work Together
                     </h2>
                     <p className="text-lg text-muted-foreground mb-8">
                         I&apos;m always looking for new opportunities to work on
