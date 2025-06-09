@@ -115,8 +115,8 @@ export default function Portfolio() {
                             <span className="text-primary">John Doe</span>
                         </h1>
                         <p className="text-xl md:text-2xl text-muted-foreground max-w-2xl">
-                            Full-Stack Developer passionate about creating
-                            beautiful, functional web applications
+                            I&apos;m a full-stack developer with a passion for
+                            building beautiful and functional web applications.
                         </p>
                         <div className="flex items-center justify-center gap-2 text-muted-foreground">
                             <MapPin className="w-4 h-4" />
@@ -145,10 +145,8 @@ export default function Portfolio() {
                     <div className="grid md:grid-cols-2 gap-12 items-center">
                         <div className="space-y-6">
                             <p className="text-lg text-muted-foreground leading-relaxed">
-                                I'm a passionate full-stack developer with over
-                                5 years of experience building web applications.
-                                I love turning complex problems into simple,
-                                beautiful designs.
+                                I&apos;m passionate about creating beautiful and
+                                functional web applications.
                             </p>
                             <p className="text-lg text-muted-foreground leading-relaxed">
                                 When I'm not coding, you can find me exploring
@@ -262,9 +260,8 @@ export default function Portfolio() {
                         Let's Work Together
                     </h2>
                     <p className="text-lg text-muted-foreground mb-8">
-                        I'm always interested in new opportunities and exciting
-                        projects. Let's discuss how we can bring your ideas to
-                        life.
+                        I&apos;m always looking for new opportunities to work on
+                        exciting projects.
                     </p>
                     <div className="flex flex-col sm:flex-row gap-4 justify-center">
                         <Button size="lg" className="flex-1 sm:flex-none">
