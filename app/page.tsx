@@ -1,61 +1,185 @@
 "use client";
 
-export default function Home() {
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import {
+    Card,
+    CardContent,
+    CardDescription,
+    CardHeader,
+    CardTitle,
+} from "@/components/ui/card";
+import {
+    Github,
+    Linkedin,
+    Mail,
+    ExternalLink,
+    Download,
+    MapPin,
+} from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
+
+export default function Portfolio() {
+    const skills = [
+        "React",
+        "Next.js",
+        "TypeScript",
+        "Node.js",
+        "Python",
+        "PostgreSQL",
+        "MongoDB",
+        "AWS",
+        "Docker",
+        "Git",
+    ];
+
+    const projects = [
+        {
+            title: "E-Commerce Platform",
+            description:
+                "Full-stack e-commerce solution with payment integration, inventory management, and admin dashboard.",
+            tech: ["Next.js", "Stripe", "PostgreSQL", "Tailwind CSS"],
+            github: "#",
+            live: "#",
+            image: "/placeholder.svg?height=200&width=300",
+        },
+        {
+            title: "Task Management App",
+            description:
+                "Collaborative project management tool with real-time updates, team collaboration, and progress tracking.",
+            tech: ["React", "Node.js", "Socket.io", "MongoDB"],
+            github: "#",
+            live: "#",
+            image: "/placeholder.svg?height=200&width=300",
+        },
+        {
+            title: "Weather Dashboard",
+            description:
+                "Interactive weather application with location-based forecasts, historical data, and beautiful visualizations.",
+            tech: ["Vue.js", "D3.js", "Express", "Weather API"],
+            github: "#",
+            live: "#",
+            image: "/placeholder.svg?height=200&width=300",
+        },
+    ];
+
     return (
-        <main className="min-h-screen bg-gray-100">
+        <div className="min-h-screen bg-background">
+            {/* Navigation */}
+            <nav className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+                <div className="container flex h-16 items-center justify-between">
+                    <div className="font-bold text-xl">John Doe</div>
+                    <div className="hidden md:flex items-center space-x-6">
+                        <Link
+                            href="#about"
+                            className="text-sm font-medium hover:text-primary transition-colors"
+                        >
+                            About
+                        </Link>
+                        <Link
+                            href="#projects"
+                            className="text-sm font-medium hover:text-primary transition-colors"
+                        >
+                            Projects
+                        </Link>
+                        <Link
+                            href="#contact"
+                            className="text-sm font-medium hover:text-primary transition-colors"
+                        >
+                            Contact
+                        </Link>
+                        <Button variant="outline" size="sm">
+                            <Download className="w-4 h-4 mr-2" />
+                            Resume
+                        </Button>
+                    </div>
+                </div>
+            </nav>
+
             {/* Hero Section */}
-            <section className="bg-white py-20">
-                <div className="container mx-auto px-4">
-                    <div className="flex flex-col items-center text-center">
-                        <h1 className="text-4xl font-bold mb-4">
-                            안녕하세요, 저는 [이름]입니다
+            <section className="container py-24 md:py-32">
+                <div className="flex flex-col items-center text-center space-y-8">
+                    <div className="relative">
+                        <Image
+                            src="/placeholder.svg?height=150&width=150"
+                            alt="Profile"
+                            width={150}
+                            height={150}
+                            className="rounded-full border-4 border-primary/20"
+                        />
+                    </div>
+                    <div className="space-y-4">
+                        <h1 className="text-4xl md:text-6xl font-bold tracking-tight">
+                            Hi, I'm{" "}
+                            <span className="text-primary">John Doe</span>
                         </h1>
-                        <p className="text-xl text-gray-600 mb-8">
-                            프론트엔드 개발자
+                        <p className="text-xl md:text-2xl text-muted-foreground max-w-2xl">
+                            Full-Stack Developer passionate about creating
+                            beautiful, functional web applications
                         </p>
-                        <div className="flex gap-4">
-                            <button className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700">
-                                프로젝트 보기
-                            </button>
-                            <button className="border border-blue-600 text-blue-600 px-6 py-2 rounded-lg hover:bg-blue-50">
-                                연락하기
-                            </button>
+                        <div className="flex items-center justify-center gap-2 text-muted-foreground">
+                            <MapPin className="w-4 h-4" />
+                            <span>San Francisco, CA</span>
                         </div>
+                    </div>
+                    <div className="flex gap-4">
+                        <Button size="lg">
+                            <Mail className="w-4 h-4 mr-2" />
+                            Get In Touch
+                        </Button>
+                        <Button variant="outline" size="lg">
+                            <Github className="w-4 h-4 mr-2" />
+                            GitHub
+                        </Button>
                     </div>
                 </div>
             </section>
 
             {/* About Section */}
-            <section className="py-20">
-                <div className="container mx-auto px-4">
+            <section id="about" className="container py-16">
+                <div className="max-w-4xl mx-auto">
                     <h2 className="text-3xl font-bold text-center mb-12">
                         About Me
                     </h2>
-                    <div className="max-w-3xl mx-auto">
-                        <p className="text-gray-600 mb-6">
-                            저는 사용자 경험을 중요시하는 프론트엔드
-                            개발자입니다. 최신 웹 기술을 활용하여 반응형이고
-                            접근성이 좋은 웹 애플리케이션을 만드는 것을
-                            좋아합니다.
-                        </p>
-                        <div className="grid grid-cols-2 gap-6">
-                            <div>
-                                <h3 className="font-bold mb-2">기술 스택</h3>
-                                <ul className="list-disc list-inside text-gray-600">
-                                    <li>React / Next.js</li>
-                                    <li>TypeScript</li>
-                                    <li>Tailwind CSS</li>
-                                    <li>Node.js</li>
-                                </ul>
+                    <div className="grid md:grid-cols-2 gap-12 items-center">
+                        <div className="space-y-6">
+                            <p className="text-lg text-muted-foreground leading-relaxed">
+                                I'm a passionate full-stack developer with over
+                                5 years of experience building web applications.
+                                I love turning complex problems into simple,
+                                beautiful designs.
+                            </p>
+                            <p className="text-lg text-muted-foreground leading-relaxed">
+                                When I'm not coding, you can find me exploring
+                                new technologies, contributing to open-source
+                                projects, or enjoying the great outdoors.
+                            </p>
+                            <div className="flex gap-4">
+                                <Button variant="outline">
+                                    <Linkedin className="w-4 h-4 mr-2" />
+                                    LinkedIn
+                                </Button>
+                                <Button variant="outline">
+                                    <Github className="w-4 h-4 mr-2" />
+                                    GitHub
+                                </Button>
                             </div>
-                            <div>
-                                <h3 className="font-bold mb-2">관심 분야</h3>
-                                <ul className="list-disc list-inside text-gray-600">
-                                    <li>웹 성능 최적화</li>
-                                    <li>사용자 경험 디자인</li>
-                                    <li>접근성</li>
-                                    <li>반응형 웹 디자인</li>
-                                </ul>
+                        </div>
+                        <div className="space-y-6">
+                            <h3 className="text-xl font-semibold">
+                                Skills & Technologies
+                            </h3>
+                            <div className="flex flex-wrap gap-2">
+                                {skills.map((skill) => (
+                                    <Badge
+                                        key={skill}
+                                        variant="secondary"
+                                        className="text-sm"
+                                    >
+                                        {skill}
+                                    </Badge>
+                                ))}
                             </div>
                         </div>
                     </div>
@@ -63,73 +187,108 @@ export default function Home() {
             </section>
 
             {/* Projects Section */}
-            <section className="bg-white py-20">
-                <div className="container mx-auto px-4">
+            <section id="projects" className="container py-16 bg-muted/50">
+                <div className="max-w-6xl mx-auto">
                     <h2 className="text-3xl font-bold text-center mb-12">
-                        프로젝트
+                        Featured Projects
                     </h2>
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                        {/* Project Card 1 */}
-                        <div className="bg-gray-50 rounded-lg overflow-hidden shadow-lg">
-                            <div className="p-6">
-                                <h3 className="text-xl font-bold mb-2">
-                                    프로젝트 제목
-                                </h3>
-                                <p className="text-gray-600 mb-4">
-                                    프로젝트에 대한 간단한 설명을 작성합니다.
-                                </p>
-                                <div className="flex gap-2">
-                                    <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">
-                                        React
-                                    </span>
-                                    <span className="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm">
-                                        TypeScript
-                                    </span>
+                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        {projects.map((project, index) => (
+                            <Card
+                                key={index}
+                                className="overflow-hidden hover:shadow-lg transition-shadow"
+                            >
+                                <div className="aspect-video relative overflow-hidden">
+                                    <Image
+                                        src={
+                                            project.image || "/placeholder.svg"
+                                        }
+                                        alt={project.title}
+                                        fill
+                                        className="object-cover hover:scale-105 transition-transform duration-300"
+                                    />
                                 </div>
-                            </div>
-                        </div>
+                                <CardHeader>
+                                    <CardTitle className="flex items-center justify-between">
+                                        {project.title}
+                                        <div className="flex gap-2">
+                                            <Button
+                                                variant="ghost"
+                                                size="icon"
+                                                asChild
+                                            >
+                                                <Link href={project.github}>
+                                                    <Github className="w-4 h-4" />
+                                                </Link>
+                                            </Button>
+                                            <Button
+                                                variant="ghost"
+                                                size="icon"
+                                                asChild
+                                            >
+                                                <Link href={project.live}>
+                                                    <ExternalLink className="w-4 h-4" />
+                                                </Link>
+                                            </Button>
+                                        </div>
+                                    </CardTitle>
+                                    <CardDescription>
+                                        {project.description}
+                                    </CardDescription>
+                                </CardHeader>
+                                <CardContent>
+                                    <div className="flex flex-wrap gap-1">
+                                        {project.tech.map((tech) => (
+                                            <Badge
+                                                key={tech}
+                                                variant="outline"
+                                                className="text-xs"
+                                            >
+                                                {tech}
+                                            </Badge>
+                                        ))}
+                                    </div>
+                                </CardContent>
+                            </Card>
+                        ))}
                     </div>
                 </div>
             </section>
 
             {/* Contact Section */}
-            <section className="py-20">
-                <div className="container mx-auto px-4">
-                    <h2 className="text-3xl font-bold text-center mb-12">
-                        연락처
+            <section id="contact" className="container py-16">
+                <div className="max-w-2xl mx-auto text-center">
+                    <h2 className="text-3xl font-bold mb-8">
+                        Let's Work Together
                     </h2>
-                    <div className="max-w-2xl mx-auto text-center">
-                        <p className="text-gray-600 mb-8">
-                            프로젝트나 협업에 대해 이야기하고 싶으시다면
-                            언제든지 연락해주세요.
-                        </p>
-                        <div className="flex justify-center gap-6">
-                            <a
-                                href="mailto:your.email@example.com"
-                                className="text-blue-600 hover:text-blue-800"
-                            >
-                                이메일
-                            </a>
-                            <a
-                                href="https://github.com/yourusername"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="text-blue-600 hover:text-blue-800"
-                            >
-                                GitHub
-                            </a>
-                            <a
-                                href="https://linkedin.com/in/yourusername"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="text-blue-600 hover:text-blue-800"
-                            >
-                                LinkedIn
-                            </a>
-                        </div>
+                    <p className="text-lg text-muted-foreground mb-8">
+                        I'm always interested in new opportunities and exciting
+                        projects. Let's discuss how we can bring your ideas to
+                        life.
+                    </p>
+                    <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                        <Button size="lg" className="flex-1 sm:flex-none">
+                            <Mail className="w-4 h-4 mr-2" />
+                            Send Email
+                        </Button>
+                        <Button
+                            variant="outline"
+                            size="lg"
+                            className="flex-1 sm:flex-none"
+                        >
+                            <Download className="w-4 h-4 mr-2" />
+                            Download Resume
+                        </Button>
                     </div>
                 </div>
             </section>
-        </main>
+
+            {/* Footer */}
+            <footer className="border-t py-8">
+                <div className="container text-center text-muted-foreground">
+                    <p>&copy; 2024 John Doe. All rights reserved.</p>
+                </div>
+            </footer>
+        </div>
     );
 }
