@@ -104,7 +104,7 @@ export default function Portfolio() {
                 <div className="flex flex-col items-center text-center space-y-8">
                     <div className="relative w-[150px] h-[150px]">
                         <Image
-                            src="/profile-placeholder.jpeg"
+                            src="/portfolio/profile-placeholder.jpeg"
                             alt="Profile"
                             fill
                             className="rounded-full border-4 border-primary/20 object-cover object-top"
@@ -201,7 +201,9 @@ export default function Portfolio() {
                                 <div className="relative aspect-video overflow-hidden">
                                     <Image
                                         src={
-                                            project.image || "/placeholder.svg"
+                                            project.image
+                                                ? `/portfolio${project.image}`
+                                                : "/portfolio/placeholder.svg"
                                         }
                                         alt={project.title}
                                         fill
