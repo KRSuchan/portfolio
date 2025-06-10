@@ -186,7 +186,9 @@ export default function Portfolio() {
                             key={project.title}
                             className="group cursor-pointer"
                             onClick={() =>
-                                (window.location.href = `/projects/${project.id}`)
+                                (window.location.href = `${
+                                    process.env.NEXT_PUBLIC_BASE_PATH || ""
+                                }/projects/${project.id}`)
                             }
                         >
                             <div className="relative aspect-video">
