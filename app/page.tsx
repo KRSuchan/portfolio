@@ -89,7 +89,7 @@ export default function Portfolio() {
                 <div className="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-48 max-w-5xl mx-auto">
                     <div className="relative w-[200px] h-[200px] md:w-[250px] md:h-[250px] flex-shrink-0">
                         <Image
-                            src="/profile-placeholder.jpeg"
+                            src="/이수찬_프로필.jpeg"
                             alt="Profile"
                             fill
                             className="rounded-full border-4 border-primary/20 object-cover object-top"
