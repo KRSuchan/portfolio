@@ -15,7 +15,7 @@ const projects = {
         ],
         github: "#",
         live: "https://coca-project.site/",
-        image: "/placeholder.svg",
+        image: `${process.env.NEXT_PUBLIC_BASE_PATH || ""}/placeholder.svg`,
         longDescription:
             "COCA 프로젝트는 전자상거래 플랫폼으로, 결제 시스템 통합, 재고 관리, 관리자 대시보드 등 다양한 기능을 제공합니다. V1에서는 기본적인 전자상거래 기능을 구현했고, V2에서는 사용자 경험을 개선하고 성능을 최적화했습니다.",
         features: [
@@ -39,7 +39,7 @@ const projects = {
         ],
         github: "#",
         live: "#",
-        image: "/placeholder.svg",
+        image: `${process.env.NEXT_PUBLIC_BASE_PATH || ""}/placeholder.svg`,
         longDescription:
             "사용자 간 일정 공유와 협업을 지원하는 서비스로, 개인 일정뿐 아니라 그룹 단위의 일정 조율까지 한 번에 관리할 수 있는 플랫폼입니다.",
         features: [
@@ -61,7 +61,7 @@ const projects = {
         tech: ["React Native", "Firebase", "Python", "Raspberry Pi", "Flutter"],
         github: "#",
         live: "#",
-        image: "/placeholder.svg",
+        image: `${process.env.NEXT_PUBLIC_BASE_PATH || ""}/placeholder.svg`,
         longDescription: "프로젝트 3에 대한 자세한 설명입니다.",
         features: ["주요 기능 1", "주요 기능 2", "주요 기능 3"],
         isTeamProject: true,

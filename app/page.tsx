@@ -46,7 +46,7 @@ export default function Portfolio() {
             tech: ["SpringBoot", "React", "Docker", "AWS", "GitHub Actions"],
             github: "#",
             live: "#",
-            image: "/placeholder.svg",
+            image: `${process.env.NEXT_PUBLIC_BASE_PATH || ""}/placeholder.svg`,
             isTeamProject: true,
             isPrized: false,
             teamSize: 1,
@@ -61,7 +61,7 @@ export default function Portfolio() {
             github: "#",
             live: "#",
             isPrized: false,
-            image: "/placeholder.svg",
+            image: `${process.env.NEXT_PUBLIC_BASE_PATH || ""}/placeholder.svg`,
             isTeamProject: true,
             teamSize: 4,
         },
@@ -72,7 +72,7 @@ export default function Portfolio() {
             tech: ["Vue.js", "Express", "MySQL"],
             github: "#",
             live: "#",
-            image: "/placeholder.svg",
+            image: `${process.env.NEXT_PUBLIC_BASE_PATH || ""}/placeholder.svg`,
             isTeamProject: true,
             teamSize: 4,
             isPrized: true,
@@ -89,7 +89,9 @@ export default function Portfolio() {
                 <div className="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-48 max-w-5xl mx-auto">
                     <div className="relative w-[200px] h-[200px] md:w-[250px] md:h-[250px] flex-shrink-0">
                         <Image
-                            src="/이수찬_프로필.jpeg"
+                            src={`${
+                                process.env.NEXT_PUBLIC_BASE_PATH || ""
+                            }/이수찬_프로필.jpeg`}
                             alt="Profile"
                             fill
                             className="rounded-full border-4 border-primary/20 object-cover object-top"
