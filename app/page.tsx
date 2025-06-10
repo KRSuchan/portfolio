@@ -2,293 +2,314 @@
 
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import {
-    Card,
-    CardContent,
-    CardDescription,
-    CardHeader,
-    CardTitle,
-} from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import {
     Github,
-    Linkedin,
     Mail,
     ExternalLink,
-    Download,
     MapPin,
+    CheckCircle2,
+    Users,
+    Medal,
 } from "lucide-react";
 import Image from "next/image";
-import Link from "next/link";
-import { ThemeToggle } from "@/components/theme-toggle";
+import { useState } from "react";
+import { Navbar } from "./components/navbar";
 
 export default function Portfolio() {
+    const [showToast, setShowToast] = useState(false);
+
+    const copyEmail = () => {
+        navigator.clipboard.writeText("lsc1814@naver.com");
+        setShowToast(true);
+        setTimeout(() => setShowToast(false), 2000);
+    };
+
     const skills = [
-        "React",
-        "Next.js",
-        "TypeScript",
-        "Node.js",
-        "Python",
-        "PostgreSQL",
-        "MongoDB",
+        "SpringBoot",
+        "Java",
+        "MySQL",
         "AWS",
         "Docker",
         "Git",
+        "JavaScript",
+        "React",
+        "React Native",
     ];
 
     const projects = [
         {
-            title: "E-Commerce Platform",
+            id: "coca-project-v2",
+            title: "COCA V2",
             description:
-                "Full-stack e-commerce solution with payment integration, inventory management, and admin dashboard.",
-            tech: ["Next.js", "Stripe", "PostgreSQL", "Tailwind CSS"],
+                "기존 미완성이었던 COCA 프로젝트를 완성하고 배포와 함께 CI/CD 파이프라인을 구축하는 개인 프로젝트",
+            tech: ["SpringBoot", "React", "Docker", "AWS", "GitHub Actions"],
             github: "#",
             live: "#",
             image: "/placeholder.svg",
+            isTeamProject: true,
+            isPrized: false,
+            teamSize: 1,
+            role: "프론트엔드 개발자",
         },
         {
-            title: "Task Management App",
+            id: "coca-project-v1",
+            title: "COCA",
             description:
-                "Collaborative project management tool with real-time updates, team collaboration, and progress tracking.",
-            tech: ["React", "Node.js", "Socket.io", "MongoDB"],
+                "사용자 간 일정 공유와 협업을 지원하는 서비스로, 개인 일정뿐 아니라 그룹 단위의 일정 조율까지 한 번에 관리할 수 있는 플랫폼입니다.",
+            tech: ["Spring Boot", "React", "MySQL"],
             github: "#",
             live: "#",
+            isPrized: false,
             image: "/placeholder.svg",
+            isTeamProject: true,
+            teamSize: 4,
         },
         {
-            title: "Weather Dashboard",
-            description:
-                "Interactive weather application with location-based forecasts, historical data, and beautiful visualizations.",
-            tech: ["Vue.js", "D3.js", "Express", "Weather API"],
+            id: "Pokits-project",
+            title: "Pokits",
+            description: "Description of project 3",
+            tech: ["Vue.js", "Express", "MySQL"],
             github: "#",
             live: "#",
             image: "/placeholder.svg",
+            isTeamProject: true,
+            teamSize: 4,
+            isPrized: true,
+            role: "백엔드 개발자",
         },
     ];
 
     return (
         <div className="min-h-screen bg-background">
             {/* Navigation */}
-            <nav className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-                <div className="container flex h-16 items-center justify-between">
-                    <div className="font-bold text-xl">John Doe</div>
-                    <div className="flex items-center space-x-6">
-                        <Link
-                            href="#about"
-                            className="text-sm font-medium hover:text-primary transition-colors"
-                        >
-                            About
-                        </Link>
-                        <Link
-                            href="#projects"
-                            className="text-sm font-medium hover:text-primary transition-colors"
-                        >
-                            Projects
-                        </Link>
-                        <Link
-                            href="#contact"
-                            className="text-sm font-medium hover:text-primary transition-colors"
-                        >
-                            Contact
-                        </Link>
-                        <ThemeToggle />
-                        <Button variant="outline" size="sm">
-                            <Download className="w-4 h-4 mr-2" />
-                            Resume
-                        </Button>
-                    </div>
-                </div>
-            </nav>
-
+            <Navbar />
             {/* Hero Section */}
             <section className="container py-24 md:py-32">
-                <div className="flex flex-col items-center text-center space-y-8">
-                    <div className="relative w-[150px] h-[150px]">
+                <div className="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-48 max-w-5xl mx-auto">
+                    <div className="relative w-[200px] h-[200px] md:w-[250px] md:h-[250px] flex-shrink-0">
                         <Image
-                            src="/portfolio/profile-placeholder.jpeg"
+                            src="/profile-placeholder.jpeg"
                             alt="Profile"
                             fill
                             className="rounded-full border-4 border-primary/20 object-cover object-top"
                         />
                     </div>
-                    <div className="space-y-4">
-                        <h1 className="text-4xl md:text-6xl font-bold tracking-tight">
-                            Hi, I'm <span className="text-primary">이수찬</span>
+                    <div className="flex-1 text-center md:text-left">
+                        <h1 className="text-4xl md:text-6xl font-bold mb-4">
+                            안녕하세요, <br />
+                            백엔드 개발자 <br />
+                            이수찬입니다.
                         </h1>
-                        <p className="text-xl md:text-2xl text-muted-foreground max-w-2xl">
-                            Full-Stack Developer passionate about creating
-                            beautiful, functional web applications
+                        <p className="text-xl text-muted-foreground mb-8">
+                            안정성과 효율성을 중시하는 백엔드 개발자입니다.
                         </p>
-                        <div className="flex items-center justify-center gap-2 text-muted-foreground">
-                            <MapPin className="w-4 h-4" />
-                            <span>San Francisco, CA</span>
+                        <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+                            <Button onClick={copyEmail} className="relative">
+                                <Mail className="w-4 h-4 mr-2" />
+                                Copy Email
+                                <div
+                                    className={`absolute -bottom-8 left-1/2 -translate-x-1/2 transition-all duration-300 ${
+                                        showToast
+                                            ? "opacity-100 translate-y-0"
+                                            : "opacity-0 translate-y-2"
+                                    }`}
+                                >
+                                    <div className="bg-green-500 text-white px-3 py-1 rounded-md text-sm flex items-center gap-1">
+                                        <CheckCircle2 className="w-4 h-4" />
+                                        <span className="italic">
+                                            복사완료!
+                                        </span>
+                                    </div>
+                                </div>
+                            </Button>
+                            <Button
+                                variant="outline"
+                                onClick={() =>
+                                    window.open(
+                                        "https://github.com/KRSuchan",
+                                        "_blank",
+                                        "noopener,noreferrer"
+                                    )
+                                }
+                            >
+                                <Github className="w-4 h-4 mr-2" />
+                                GitHub
+                            </Button>
                         </div>
-                    </div>
-                    <div className="flex gap-4">
-                        <Button size="lg">
-                            <Mail className="w-4 h-4 mr-2" />
-                            Get In Touch
-                        </Button>
-                        <Button variant="outline" size="lg">
-                            <Github className="w-4 h-4 mr-2" />
-                            GitHub
-                        </Button>
                     </div>
                 </div>
             </section>
 
             {/* About Section */}
             <section id="about" className="container py-16">
-                <div className="max-w-4xl mx-auto">
-                    <h2 className="text-3xl font-bold text-center mb-12">
-                        About Me
-                    </h2>
-                    <div className="grid md:grid-cols-2 gap-12 items-center">
-                        <div className="space-y-6">
-                            <p className="text-lg text-muted-foreground leading-relaxed">
-                                I'm a passionate full-stack developer with over
-                                5 years of experience building web applications.
-                                I love turning complex problems into simple,
-                                beautiful designs.
-                            </p>
-                            <p className="text-lg text-muted-foreground leading-relaxed">
-                                When I'm not coding, you can find me exploring
-                                new technologies, contributing to open-source
-                                projects, or enjoying the great outdoors.
-                            </p>
-                            <div className="flex gap-4">
-                                <Button variant="outline">
-                                    <Linkedin className="w-4 h-4 mr-2" />
-                                    LinkedIn
-                                </Button>
-                                <Button variant="outline">
-                                    <Github className="w-4 h-4 mr-2" />
-                                    GitHub
-                                </Button>
-                            </div>
-                        </div>
-                        <div className="space-y-6">
-                            <h3 className="text-xl font-semibold">
-                                Skills & Technologies
-                            </h3>
-                            <div className="flex flex-wrap gap-2">
-                                {skills.map((skill) => (
-                                    <Badge
-                                        key={skill}
-                                        variant="secondary"
-                                        className="text-sm"
-                                    >
-                                        {skill}
-                                    </Badge>
-                                ))}
-                            </div>
+                <h2 className="text-3xl font-bold mb-8">About</h2>
+                <div className="grid md:grid-cols-2 gap-8">
+                    <div>
+                        <h3 className="text-xl font-semibold mb-4">소개</h3>
+                        <p className="text-muted-foreground">
+                            안녕하세요, 안정성과 효율성을 중시하는 백엔드 개발자
+                            이수찬입니다. Java와 Spring Boot를 중심으로 웹
+                            서비스의 구조를 설계하고 구현하는 데 관심이 많으며,
+                            데이터베이스 설계와 API 개발 경험을 통해 백엔드
+                            시스템의 탄탄한 기반을 만드는 데 집중하고 있습니다.
+                            협업과 커뮤니케이션을 중요하게 생각하며, 함께
+                            성장하는 개발자가 되고 싶습니다.
+                        </p>
+                    </div>
+                    <div>
+                        <h3 className="text-xl font-semibold mb-4">
+                            기술 스택
+                        </h3>
+                        <div className="flex flex-wrap gap-2">
+                            {skills.map((skill) => (
+                                <span
+                                    key={skill}
+                                    className="px-3 py-1 bg-primary/10 rounded-full text-sm"
+                                >
+                                    {skill}
+                                </span>
+                            ))}
                         </div>
                     </div>
                 </div>
             </section>
 
             {/* Projects Section */}
-            <section id="projects" className="container py-16 bg-muted/50">
-                <div className="max-w-6xl mx-auto">
-                    <h2 className="text-3xl font-bold text-center mb-12">
-                        Featured Projects
-                    </h2>
-                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                        {projects.map((project, index) => (
-                            <Card
-                                key={index}
-                                className="overflow-hidden hover:shadow-lg transition-shadow"
-                            >
-                                <div className="relative aspect-video overflow-hidden">
-                                    <Image
-                                        src={
-                                            project.image
-                                                ? `/portfolio${project.image}`
-                                                : "/portfolio/placeholder.svg"
-                                        }
-                                        alt={project.title}
-                                        fill
-                                        className="object-cover hover:scale-105 transition-transform duration-300"
-                                    />
-                                </div>
-                                <CardHeader>
-                                    <CardTitle className="flex items-center justify-between">
+            <section id="projects" className="container py-16">
+                <h2 className="text-3xl font-bold mb-8">Projects</h2>
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    {projects.map((project) => (
+                        <Card
+                            key={project.title}
+                            className="group cursor-pointer"
+                            onClick={() =>
+                                (window.location.href = `/projects/${project.id}`)
+                            }
+                        >
+                            <div className="relative aspect-video">
+                                <Image
+                                    src={project.image}
+                                    alt={project.title}
+                                    fill
+                                    className="object-cover rounded-t-lg"
+                                />
+                            </div>
+                            <CardHeader>
+                                <CardTitle className="flex items-start justify-between">
+                                    <div className="flex items-center gap-2">
                                         {project.title}
-                                        <div className="flex gap-2">
-                                            <Button
-                                                variant="ghost"
-                                                size="icon"
-                                                asChild
-                                            >
-                                                <Link href={project.github}>
-                                                    <Github className="w-4 h-4" />
-                                                </Link>
-                                            </Button>
-                                            <Button
-                                                variant="ghost"
-                                                size="icon"
-                                                asChild
-                                            >
-                                                <Link href={project.live}>
-                                                    <ExternalLink className="w-4 h-4" />
-                                                </Link>
-                                            </Button>
-                                        </div>
-                                    </CardTitle>
-                                    <CardDescription>
-                                        {project.description}
-                                    </CardDescription>
-                                </CardHeader>
-                                <CardContent>
-                                    <div className="flex flex-wrap gap-1">
-                                        {project.tech.map((tech) => (
-                                            <Badge
-                                                key={tech}
-                                                variant="outline"
-                                                className="text-xs"
-                                            >
-                                                {tech}
-                                            </Badge>
-                                        ))}
+                                        {project.isPrized && (
+                                            <span className="text-primary">
+                                                <Medal className="w-4 h-4" />
+                                            </span>
+                                        )}
                                     </div>
-                                </CardContent>
-                            </Card>
-                        ))}
-                    </div>
+                                    <div className="flex gap-2">
+                                        <div className="flex items-center gap-2">
+                                            {project.isTeamProject && (
+                                                <Badge
+                                                    variant="secondary"
+                                                    className="flex items-center gap-1"
+                                                >
+                                                    <Users className="w-4 h-4" />
+                                                    {project.teamSize}
+                                                </Badge>
+                                            )}
+                                        </div>
+                                        <div className="flex gap-2">
+                                            {project.github !== "#" && (
+                                                <Button
+                                                    variant="ghost"
+                                                    size="icon"
+                                                    onClick={(e) => {
+                                                        e.preventDefault();
+                                                        window.open(
+                                                            project.github,
+                                                            "_blank",
+                                                            "noopener,noreferrer"
+                                                        );
+                                                    }}
+                                                >
+                                                    <Github className="w-4 h-4" />
+                                                </Button>
+                                            )}
+                                            {project.live !== "#" && (
+                                                <Button
+                                                    variant="ghost"
+                                                    size="icon"
+                                                    onClick={(e) => {
+                                                        e.preventDefault();
+                                                        window.open(
+                                                            project.live,
+                                                            "_blank",
+                                                            "noopener,noreferrer"
+                                                        );
+                                                    }}
+                                                >
+                                                    <ExternalLink className="w-4 h-4" />
+                                                </Button>
+                                            )}
+                                        </div>
+                                    </div>
+                                </CardTitle>
+                                <p className="text-muted-foreground">
+                                    {project.description}
+                                </p>
+                                <div className="flex flex-wrap gap-2 mt-4">
+                                    {project.tech.map((tech) => (
+                                        <span
+                                            key={tech}
+                                            className="px-2 py-1 bg-primary/10 rounded-full text-xs"
+                                        >
+                                            {tech}
+                                        </span>
+                                    ))}
+                                </div>
+                            </CardHeader>
+                        </Card>
+                    ))}
                 </div>
             </section>
 
             {/* Contact Section */}
             <section id="contact" className="container py-16">
-                <div className="max-w-2xl mx-auto text-center">
-                    <h2 className="text-3xl font-bold mb-8">
-                        Let's Work Together
-                    </h2>
-                    <p className="text-lg text-muted-foreground mb-8">
-                        I'm always interested in new opportunities and exciting
-                        projects. Let's discuss how we can bring your ideas to
-                        life.
-                    </p>
-                    <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                        <Button size="lg" className="flex-1 sm:flex-none">
-                            <Mail className="w-4 h-4 mr-2" />
-                            Send Email
-                        </Button>
-                        <Button
-                            variant="outline"
-                            size="lg"
-                            className="flex-1 sm:flex-none"
-                        >
-                            <Download className="w-4 h-4 mr-2" />
-                            Download Resume
-                        </Button>
-                    </div>
+                <h2 className="text-3xl font-bold mb-8">Contact</h2>
+                <div className="max-w-md mx-auto">
+                    <Card>
+                        <CardHeader>
+                            <CardTitle>Get In Touch</CardTitle>
+                        </CardHeader>
+                        <CardContent>
+                            <div className="space-y-4">
+                                <div className="flex items-center space-x-2">
+                                    <MapPin className="w-4 h-4" />
+                                    <span>Seoul, South Korea</span>
+                                </div>
+                                <div className="flex items-center space-x-2">
+                                    <Mail className="w-4 h-4" />
+                                    <span>lsc1814@naver.com</span>
+                                </div>
+                            </div>
+                        </CardContent>
+                    </Card>
                 </div>
             </section>
+            {/*  Section */}
 
-            {/* Footer */}
-            <footer className="border-t py-8">
-                <div className="container text-center text-muted-foreground">
-                    <p>&copy; 2025 John Doe. All rights reserved.</p>
+            <footer className="border-t">
+                <div className="container py-8">
+                    <p className="text-center text-muted-foreground">
+                        © 2025 Suchan Lee. All rights reserved.
+                        <br />
+                        CI/CD : GitHub Actions
+                        <br />
+                        Deploy : GitHub Pages
+                        <br />
+                        Next.js : Cursor AI
+                        <br />
+                        Design : V0 AI
+                    </p>
                 </div>
             </footer>
         </div>
