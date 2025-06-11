@@ -21,6 +21,7 @@ interface Project {
     teamSize?: number;
     role?: string;
     isPrized: boolean;
+    prize?: string;
 }
 
 export function ProjectDetail({ project }: { project: Project }) {
@@ -59,7 +60,7 @@ export function ProjectDetail({ project }: { project: Project }) {
                                             >
                                                 <Medal className="w-4 h-4" />
                                                 <span className="text-muted-foreground">
-                                                    교내 공모전 은상 수상
+                                                    {project.prize}
                                                 </span>
                                             </Badge>
                                         </div>

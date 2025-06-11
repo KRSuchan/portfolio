@@ -1,6 +1,7 @@
 # Portfolio Website
 
-Next.js와 Tailwind CSS를 사용하여 만든 포트폴리오 웹사이트입니다.
+Cursor AI와 V0 AI를 사용하여 만든 포트폴리오 웹사이트입니다.
+Next.js와 Tailwind CSS를 사용하였습니다.
 
 ## 기술 스택
 
