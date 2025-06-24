@@ -12,7 +12,10 @@ interface Project {
     title: string;
     description: string;
     tech: string[];
-    github: string;
+    github: {
+        name: string;
+        url: string;
+    }[];
     live: string;
     image: string;
     longDescription: string;
@@ -45,7 +48,7 @@ export function ProjectDetail({ project }: { project: Project }) {
                         />
                     </div>
 
-                    <div className="space-y-8">
+                    <div className="space-y-5 mb-8">
                         <div className="flex items-center justify-between">
                             <div className="space-y-2">
                                 <div className="flex items-center gap-2">
@@ -82,22 +85,6 @@ export function ProjectDetail({ project }: { project: Project }) {
                                 )}
                             </div>
                             <div className="flex gap-2">
-                                {project.github !== "#" && (
-                                    <Button
-                                        variant="outline"
-                                        size="icon"
-                                        onClick={(e) => {
-                                            e.preventDefault();
-                                            window.open(
-                                                project.github,
-                                                "_blank",
-                                                "noopener,noreferrer"
-                                            );
-                                        }}
-                                    >
-                                        <Github className="w-4 h-4" />
-                                    </Button>
-                                )}
                                 {project.live !== "#" && (
                                     <Button
                                         variant="outline"
@@ -116,7 +103,25 @@ export function ProjectDetail({ project }: { project: Project }) {
                                 )}
                             </div>
                         </div>
-
+                        <div className="flex gap-2">
+                            {project.github.map(({ url, name }) => (
+                                <Button
+                                    variant="outline"
+                                    size="sm"
+                                    onClick={(e) => {
+                                        e.preventDefault();
+                                        window.open(
+                                            url,
+                                            "_blank",
+                                            "noopener,noreferrer"
+                                        );
+                                    }}
+                                >
+                                    <Github className="w-4 h-4" />
+                                    <span className="text-sm">{name}</span>
+                                </Button>
+                            ))}
+                        </div>
                         <Card>
                             <CardHeader>
                                 <CardTitle>프로젝트 개요</CardTitle>

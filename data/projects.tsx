@@ -20,7 +20,20 @@ export const projects = {
             "호스팅 : AWS EC2 / RDS",
             "보안 : HTTPS",
         ],
-        github: "#",
+        github: [
+            {
+                name: "COCA-Deploy-v2",
+                url: "https://github.com/KRSuchan/COCA-Deploy-v2",
+            },
+            {
+                name: "COCA-Backend-v2",
+                url: "https://github.com/KRSuchan/COCA-Backend-v2",
+            },
+            {
+                name: "COCA-Frontend-v2",
+                url: "https://github.com/KRSuchan/COCA-Frontend-v2",
+            },
+        ],
         live: "https://coca-project.site/",
         image: `${process.env.NEXT_PUBLIC_BASE_PATH || ""}/placeholder.svg`,
         longDescription:
@@ -55,7 +68,16 @@ export const projects = {
             "백엔드 : Spring Boot / Spring Security / JWT / Redis / MySQL",
             "프론트 : React",
         ],
-        github: "#",
+        github: [
+            {
+                name: "COCA-Backend",
+                url: "https://github.com/kit-COCA/COCA-Backend",
+            },
+            {
+                name: "COCA-Frontend",
+                url: "https://github.com/kit-COCA/COCA-Frontend",
+            },
+        ],
         live: "#",
         image: `${process.env.NEXT_PUBLIC_BASE_PATH || ""}/placeholder.svg`,
         longDescription:
@@ -93,7 +115,12 @@ export const projects = {
             "Raspberry Pi",
             "Flutter",
         ],
-        github: "#",
+        github: [
+            {
+                name: "Pokits-App",
+                url: "https://github.com/KRSuchan/PokitsApplication",
+            },
+        ],
         live: "#",
         image: `${process.env.NEXT_PUBLIC_BASE_PATH || ""}/placeholder.svg`,
         longDescription:
@@ -108,6 +135,6 @@ export const projects = {
         teamSize: 4,
         isPrized: true,
         prize: "대학 교내 공모전 은상 수상",
-        role: "프로토타입 개발, 모바일 프론트엔드 개발자",
+        role: "프로토타입 개발, 애플리케이션 개발자",
     },
 };

@@ -213,22 +213,24 @@ export default function Portfolio() {
                                             )}
                                         </div>
                                         <div className="flex gap-2">
-                                            {project.github !== "#" && (
+                                            {/* {project.github[0].url !== "#" && (
                                                 <Button
                                                     variant="ghost"
                                                     size="icon"
                                                     onClick={(e) => {
                                                         e.preventDefault();
                                                         window.open(
-                                                            project.github,
+                                                            project.github[0]
+                                                                .url,
                                                             "_blank",
                                                             "noopener,noreferrer"
                                                         );
                                                     }}
                                                 >
                                                     <Github className="w-4 h-4" />
+                                                    {project.github[0].name}
                                                 </Button>
-                                            )}
+                                            )} */}
                                             {project.live !== "#" && (
                                                 <Button
                                                     variant="ghost"
