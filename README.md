@@ -1,7 +1,8 @@
 # Portfolio Website
 
-Cursor AI와 V0 AI를 사용하여 만든 포트폴리오 웹사이트입니다.
-Next.js와 Tailwind CSS를 사용하였습니다.
+Cursor AI와 V0 AI를 사용하여 만든 포트폴리오 웹사이트입니다.  
+Next.js와 Tailwind CSS를 사용하였습니다.  
+페이지 : https://krsuchan.github.io/portfolio/  
 
 ## 기술 스택
 
