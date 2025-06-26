@@ -60,13 +60,13 @@ export default function Portfolio() {
                         />
                     </div>
                     <div className="flex-1 text-center md:text-left">
-                        <h1 className="text-4xl md:text-6xl font-bold mb-4">
+                        <h1 className="text-8xl md:text-6xl font-bold mb-10">
                             안녕하세요, <br />
                             백엔드 개발자 <br />
                             이수찬입니다.
                         </h1>
                         <p className="text-xl text-muted-foreground mb-8">
-                            안정성과 효율성을 중시하는 백엔드 개발자입니다.
+                            안정성과 효율성을 중시하는 개발자입니다.
                         </p>
                         <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
                             <Button onClick={copyEmail} className="relative">
@@ -184,7 +184,7 @@ export default function Portfolio() {
                         >
                             <div className="relative aspect-video">
                                 <Image
-                                    src={project.image}
+                                    src={project.images[0]}
                                     alt={project.title}
                                     fill
                                     className="object-cover rounded-t-lg"
