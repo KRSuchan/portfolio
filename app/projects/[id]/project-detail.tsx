@@ -184,7 +184,7 @@ export function ProjectDetail({ project }: { project: Project }) {
                                 <CardTitle>프로젝트 개요</CardTitle>
                             </CardHeader>
                             <CardContent>
-                                <p className="text-lg text-muted-foreground mb-6">
+                                <p className="text-lg text-muted-foreground mb-6 whitespace-pre-line">
                                     {project.longDescription}
                                 </p>
 
