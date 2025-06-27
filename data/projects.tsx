@@ -41,7 +41,7 @@ export const projects = {
             `${process.env.NEXT_PUBLIC_BASE_PATH || ""}/placeholder.svg`,
         ],
         longDescription:
-            "기존 COCA 프로젝트의 기능을 개선하고, 배포와 함께 CI/CD 파이프라인을 구축하는 개인 프로젝트입니다.",
+            "기존 COCA 프로젝트의 기능을 개선하고, 배포와 함께 CI/CD 파이프라인을 구축하는 개인 프로젝트입니다.\n테스트용 계정\nID : tester0000\nPWD : tester0000 ",
         features: [
             "기존 COCA 프로젝트의 기능",
             "트러블 슈팅",
