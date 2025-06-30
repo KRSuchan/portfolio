@@ -32,12 +32,12 @@ export function Navbar() {
                         Contact
                     </Link>
                     <ThemeToggle />
-                    <Link href="/이수찬_이력서.pdf" target="_blank">
+                    <a href="/이수찬_이력서.pdf" target="_blank">
                         <Button variant="outline" size="sm">
                             <Download className="w-4 h-4 mr-2" />
                             Resume
                         </Button>
-                    </Link>
+                    </a>
                 </div>
             </div>
         </nav>
