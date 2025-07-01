@@ -11,6 +11,7 @@ import {
     CheckCircle2,
     Users,
     Medal,
+    Calendar,
 } from "lucide-react";
 import Image from "next/image";
 import { useState } from "react";
@@ -27,8 +28,8 @@ export default function Portfolio() {
     };
 
     const skills = [
-        "SpringBoot",
         "Java",
+        "SpringBoot",
         "MySQL",
         "AWS",
         "Docker",
@@ -48,7 +49,7 @@ export default function Portfolio() {
             <Navbar />
             {/* Hero Section */}
             <section className="container py-24 md:py-32">
-                <div className="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-48 max-w-5xl mx-auto">
+                <div className="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-48 max-w-3xl mx-auto">
                     <div className="relative w-[200px] h-[200px] md:w-[250px] md:h-[250px] flex-shrink-0">
                         <Image
                             src={`/이수찬_프로필.jpeg`}
@@ -58,13 +59,14 @@ export default function Portfolio() {
                         />
                     </div>
                     <div className="flex-1 text-center md:text-left">
-                        <h1 className="text-8xl md:text-6xl font-bold mb-10">
+                        <h1 className="text-6xl md:text-6xl font-bold mb-10 whitespace-nowrap">
                             안녕하세요, <br />
-                            백엔드 개발자 <br />
+                            웹 개발자 <br />
                             이수찬입니다.
                         </h1>
-                        <p className="text-xl text-muted-foreground mb-8">
-                            안정성과 효율성을 중시하는 개발자입니다.
+                        <p className="text-xl text-muted-foreground mb-8 whitespace-nowrap">
+                            소프트웨어의 안정성과 효율성을 중시하는
+                            개발자입니다.
                         </p>
                         <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
                             <Button onClick={copyEmail} className="relative">
@@ -110,13 +112,13 @@ export default function Portfolio() {
                     <div>
                         <h3 className="text-xl font-semibold mb-4">소개</h3>
                         <p className="text-muted-foreground">
-                            안녕하세요, 안정성과 효율성을 중시하는 백엔드 개발자
-                            이수찬입니다. Java와 Spring Boot를 중심으로 웹
-                            서비스의 구조를 설계하고 구현하는 데 관심이 많으며,
-                            데이터베이스 설계와 API 개발 경험을 통해 백엔드
-                            시스템의 탄탄한 기반을 만드는 데 집중하고 있습니다.
-                            협업과 커뮤니케이션을 중요하게 생각하며, 함께
-                            성장하는 개발자가 되고 싶습니다.
+                            안녕하세요, 소프트웨어의 안정성과 효율성을 중시하는
+                            웹 개발자 이수찬입니다. Java와 Spring Boot를
+                            중심으로 웹 서비스의 구조를 설계하고 구현하는 데
+                            관심이 많으며, 데이터베이스 설계와 API 개발 경험을
+                            통해 백엔드 시스템의 탄탄한 기반을 만드는 데
+                            집중하고 있습니다. 협업과 커뮤니케이션을 중요하게
+                            생각하며, 함께 성장하는 개발자가 되고 싶습니다.
                         </p>
                     </div>
                     <div>
@@ -135,35 +137,6 @@ export default function Portfolio() {
                         </div>
                     </div>
                 </div>
-                {/* <div className="grid md:grid-cols-2 gap-8 mt-8">
-                    <div>
-                        <h3 className="text-xl font-semibold mb-4">소개</h3>
-                        <p className="text-muted-foreground">
-                            안녕하세요, 안정성과 효율성을 중시하는 백엔드 개발자
-                            이수찬입니다. Java와 Spring Boot를 중심으로 웹
-                            서비스의 구조를 설계하고 구현하는 데 관심이 많으며,
-                            데이터베이스 설계와 API 개발 경험을 통해 백엔드
-                            시스템의 탄탄한 기반을 만드는 데 집중하고 있습니다.
-                            협업과 커뮤니케이션을 중요하게 생각하며, 함께
-                            성장하는 개발자가 되고 싶습니다.
-                        </p>
-                    </div>
-                    <div>
-                        <h3 className="text-xl font-semibold mb-4">
-                            기술 스택
-                        </h3>
-                        <div className="flex flex-wrap gap-2">
-                            {skills.map((skill) => (
-                                <span
-                                    key={skill}
-                                    className="px-3 py-1 bg-primary/10 rounded-full text-sm"
-                                >
-                                    {skill}
-                                </span>
-                            ))}
-                        </div>
-                    </div>
-                </div> */}
             </section>
 
             {/* Projects Section */}
@@ -187,14 +160,16 @@ export default function Portfolio() {
                                 />
                             </div>
                             <CardHeader>
-                                <CardTitle className="flex items-start justify-between">
-                                    <div className="flex items-center gap-2">
-                                        {project.title}
-                                        {project.isPrized && (
-                                            <span className="text-primary">
-                                                <Medal className="w-4 h-4" />
-                                            </span>
-                                        )}
+                                <CardTitle className="flex items-center justify-between">
+                                    <div className="flex items-center">
+                                        <div className="flex items-center gap-2">
+                                            {project.title}
+                                            {project.isPrized && (
+                                                <span className="text-primary">
+                                                    <Medal className="w-4 h-4" />
+                                                </span>
+                                            )}
+                                        </div>
                                     </div>
                                     <div className="flex gap-2">
                                         <div className="flex items-center gap-2">
@@ -209,28 +184,10 @@ export default function Portfolio() {
                                             )}
                                         </div>
                                         <div className="flex gap-2">
-                                            {/* {project.github[0].url !== "#" && (
-                                                <Button
-                                                    variant="ghost"
-                                                    size="icon"
-                                                    onClick={(e) => {
-                                                        e.preventDefault();
-                                                        window.open(
-                                                            project.github[0]
-                                                                .url,
-                                                            "_blank",
-                                                            "noopener,noreferrer"
-                                                        );
-                                                    }}
-                                                >
-                                                    <Github className="w-4 h-4" />
-                                                    {project.github[0].name}
-                                                </Button>
-                                            )} */}
                                             {project.live !== "#" && (
                                                 <Button
                                                     variant="ghost"
-                                                    size="icon"
+                                                    size="sm"
                                                     onClick={(e) => {
                                                         e.preventDefault();
                                                         window.open(
@@ -246,6 +203,10 @@ export default function Portfolio() {
                                         </div>
                                     </div>
                                 </CardTitle>
+                                <div className="flex gap-2 items-center">
+                                    <Calendar className="w-4 h-4" />
+                                    {project.date}
+                                </div>
                                 <p className="text-muted-foreground">
                                     {project.description}
                                 </p>

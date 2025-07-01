@@ -2,8 +2,9 @@ export const projects = {
     "coca-project-v2": {
         id: "coca-project-v2",
         title: "COCA Project V2",
+        date: "2024.10 ~ ing",
         description:
-            "기존 미완성이었던 COCA 프로젝트를 완성하고 배포와 함께 CI/CD 파이프라인을 구축하는 개인 프로젝트",
+            "기존 미완성이었던 COCA 프로젝트를 완성하고 배포와 함께 CI/CD 파이프라인을 구축하는 개인 프로젝트입니다.",
         simpleTech: [
             "SpringBoot",
             "React",
@@ -12,6 +13,7 @@ export const projects = {
             "AWS",
             "GitHub Actions",
         ],
+        docs: [],
         tech: [
             "백엔드 : Spring Boot / Spring Security / JWT / Redis / MySQL",
             "프론트 : React / Nginx",
@@ -54,19 +56,31 @@ export const projects = {
     "coca-project-v1": {
         id: "coca-project-v1",
         title: "COCA Project",
+        date: "2024.02 ~ 2024.06",
         description:
             "대학교 졸업 프로젝트로, 사용자 간 일정 공유와 협업을 지원하는 플랫폼 서비스입니다.",
-        simpleTech: [
-            "SpringBoot",
-            "React",
-            "JWT",
-            "Docker",
-            "AWS",
-            "GitHub Actions",
-        ],
+        simpleTech: ["SpringBoot", "React", "JWT"],
         tech: [
             "백엔드 : Spring Boot / Spring Security / JWT / Redis / MySQL",
             "프론트 : React",
+        ],
+        docs: [
+            {
+                name: "주제제안서.pdf",
+                path: "/코카1/docs/1. 주제제안서(이수찬, 이상헌, 임희열, 이채연) v1.pdf",
+            },
+            {
+                name: "요구명세서.pdf",
+                path: "/코카1/docs/2. 요구명세서(이수찬, 이상헌, 임희열, 이채연)v2.pdf",
+            },
+            {
+                name: "설계명세서.pdf",
+                path: "/코카1/docs/3. 설계명세서(이수찬, 이상헌, 임희열, 이채연)v1.pdf",
+            },
+            {
+                name: "최종보고서.pdf",
+                path: "/코카1/docs/5. 최종보고서(이수찬, 이상헌, 임희열, 이채연)v1.pdf",
+            },
         ],
         github: [
             {
@@ -87,6 +101,7 @@ export const projects = {
             `/코카1/코카1_5.webp`,
             `/코카1/코카1_6.webp`,
         ],
+
         longDescription:
             "사용자 간 일정 공유와 협업을 지원하는 서비스로, 개인 일정뿐 아니라 그룹 단위의 일정 조율까지 한 번에 관리할 수 있는 플랫폼입니다.",
         features: [
@@ -105,7 +120,8 @@ export const projects = {
     "Pokits-project": {
         id: "Pokits-project",
         title: "Pokits",
-        description: "대학생활 정보 통합 애플리케이션 프로젝트입니다.",
+        description: "대학생활 정보 통합 애플리케이 개발 프로젝트입니다.",
+        date: "2023.08 ~ 2023.12",
         simpleTech: [
             "React Native",
             "Firebase",
@@ -121,6 +137,24 @@ export const projects = {
             "Python",
             "Raspberry Pi",
             "Flutter",
+        ],
+        docs: [
+            {
+                name: "주제제안서.pdf",
+                path: "/포킷츠/docs/1. 주제제안서(이수찬, 임희열, 이채연, 장선혜) v2.pdf",
+            },
+            {
+                name: "요구명세서.pdf",
+                path: "/포킷츠/docs/2. 요구명세서(이수찬, 임희열, 이채연, 장선혜).pdf",
+            },
+            {
+                name: "설계명세서.pdf",
+                path: "/포킷츠/docs/3. 설계명세서(임희열, 이수찬, 이채연, 장선혜).pdf",
+            },
+            {
+                name: "최종보고서.pdf",
+                path: "/포킷츠/docs/5. 최종보고서(임희열, 이수찬, 이채연, 장선혜)_v1.0.0_BlackMarking.pdf",
+            },
         ],
         github: [
             {
@@ -138,7 +172,7 @@ export const projects = {
             `/포킷츠/포킷츠6.webp`,
         ],
         longDescription:
-            "대학생활 정보 통합 애플리케이션 프로젝트로, React Native로 프론트엔드를 개발하고, Python으로 백엔드를 개발했습니다. 소식 정보의 경우 ChatGPT를 사용하여 요약하여 제공합니다. 또한 버스 정보는 Raspberry Pi를 사용하여 ChatGPT, 버스 정보 API를 제공합니다.",
+            "대학생활 정보 통합 애플리케이션 개발 프로젝트로, React Native로 프론트엔드를 개발하고, Python으로 백엔드를 개발했습니다. 소식 정보의 경우 ChatGPT를 사용하여 요약하여 제공합니다. 또한 버스 정보는 Raspberry Pi를 사용하여 ChatGPT, 버스 정보 API를 제공합니다.",
         features: [
             "버스 정보 제공",
             "식당 정보 제공",
