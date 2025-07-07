@@ -14,6 +14,12 @@ export function Navbar() {
                 </div>
                 <div className="flex items-center space-x-6">
                     <Link
+                        href="/"
+                        className="text-sm font-medium hover:text-primary transition-colors"
+                    >
+                        Home
+                    </Link>
+                    <Link
                         href="#about"
                         className="text-sm font-medium hover:text-primary transition-colors"
                     >
@@ -24,12 +30,6 @@ export function Navbar() {
                         className="text-sm font-medium hover:text-primary transition-colors"
                     >
                         Projects
-                    </Link>
-                    <Link
-                        href="#contact"
-                        className="text-sm font-medium hover:text-primary transition-colors"
-                    >
-                        Contact
                     </Link>
                     <ThemeToggle />
                     <a href="/이수찬_이력서.pdf" target="_blank">
