@@ -37,7 +37,7 @@ export const projects = {
             },
         ],
         live: "https://coca-project.site/",
-        images: [`/placeholder.svg`, `/placeholder.svg`, `/placeholder.svg`],
+        images: [`/코카2/코카2_1.webp`, `/placeholder.svg`],
         longDescription:
             "기존 COCA 프로젝트의 기능을 개선하고, 배포와 함께 CI/CD 파이프라인을 구축하는 개인 프로젝트입니다.\n==테스트 계정==\nID : tester0000\nPWD : tester0000 ",
         features: [
@@ -120,7 +120,7 @@ export const projects = {
     "Pokits-project": {
         id: "Pokits-project",
         title: "Pokits",
-        description: "대학생활 정보 통합 애플리케이 개발 프로젝트입니다.",
+        description: "대학생활 정보 통합 애플리케이션 개발 프로젝트입니다.",
         date: "2023.08 ~ 2023.12",
         simpleTech: [
             "React Native",
