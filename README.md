@@ -1,43 +1,151 @@
-# Portfolio Website
+# Next.js Portfolio Website
 
-Cursor AI와 V0 AI를 사용하여 만든 포트폴리오 웹사이트입니다.  
-Next.js와 Tailwind CSS를 사용하였습니다.  
-페이지 : https://krsuchan.github.io/portfolio/  
+A modern, responsive portfolio website built with Next.js 13+, TypeScript, and Tailwind CSS that showcases professional experience with seamless dark mode integration. The website features a clean, accessible design with smooth transitions and dynamic content loading.
 
-## 기술 스택
+This portfolio website provides a professional platform for developers to showcase their work with features like theme switching, responsive design, and project showcasing. It leverages modern web technologies to create a fast, SEO-friendly, and accessible user experience with server-side rendering capabilities.
 
--   Next.js 13+
--   TypeScript
--   Tailwind CSS
--   ESLint
+## Repository Structure
 
-## 시작하기
-
-1. 저장소 클론
-
-```bash
-git clone https://github.com/KRSuchan/portfolio.git
+```
+.
+├── app/                      # Next.js 13+ app directory containing page components and routing
+│   ├── components/          # App-specific components (navbar, mode-toggle)
+│   ├── projects/           # Project-related pages and components
+│   └── layout.tsx          # Root layout component with theme provider
+├── components/              # Reusable UI components
+│   ├── ui/                 # Core UI components (button, card, badge)
+│   └── theme-provider.tsx  # Theme context provider
+├── data/                    # Static data files (projects information)
+├── lib/                     # Utility functions and shared code
+└── public/                  # Static assets and images
 ```
 
-2. 의존성 설치
+## Usage Instructions
+
+### Prerequisites
+
+-   Node.js 20.x or later
+-   npm 8.x or later
+-   Git
+
+### Installation
 
 ```bash
+# Clone the repository
+git clone <repository-url>
 cd portfolio
+
+# Install dependencies
 npm install
+
+# Development
+npm run dev
+
+# Production build
+npm run build
+npm start
 ```
 
-3. 개발 서버 실행
+### Quick Start
+
+1. Configure your personal information:
+
+```typescript
+// data/projects.tsx
+export const projects = {
+    // Add your projects here
+    project1: {
+        title: "Project Name",
+        description: "Project Description",
+        // ...other project details
+    },
+};
+```
+
+2. Add your profile image:
 
 ```bash
-npm run dev
+# Add your profile image to public directory
+cp your-profile-image.jpg public/
 ```
 
-4. 브라우저에서 확인
-   http://localhost:3000
+3. Update the layout configuration:
 
-## 기능
+```typescript
+// app/layout.tsx
+export const metadata: Metadata = {
+    title: "Your Name - Portfolio",
+    description: "Your Role Description",
+};
+```
 
--   반응형 디자인
--   다크 모드 지원
--   프로젝트 갤러리
--   연락처 정보
+### More Detailed Examples
+
+Custom Theme Implementation:
+
+```typescript
+// components/theme-provider.tsx
+import { ThemeProvider } from "next-themes";
+
+export function Provider({ children }: { children: React.ReactNode }) {
+    return (
+        <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+        >
+            {children}
+        </ThemeProvider>
+    );
+}
+```
+
+### Troubleshooting
+
+Common Issues:
+
+1. Build Errors
+
+    - Error: `Module not found`
+    - Solution: Ensure all dependencies are installed with `npm install`
+
+2. Theme Toggle Not Working
+
+    - Issue: Theme doesn't persist after refresh
+    - Solution: Check localStorage permissions and theme provider setup
+
+3. Image Loading Issues
+    - Problem: Images not displaying
+    - Solution: Verify image paths and Next.js image optimization settings
+
+## Data Flow
+
+The portfolio website follows a simple data flow pattern for managing content and theme state.
+
+```ascii
+[Theme Provider] --> [Layout Component] --> [Page Components]
+       ↓                     ↓                     ↓
+[Theme State] -----> [Global Styles] -----> [UI Components]
+```
+
+Component Interactions:
+
+-   Theme Provider manages application-wide theme state
+-   Layout component provides consistent structure across pages
+-   Page components render dynamic content from data files
+-   UI components adapt to current theme settings
+-   Project data flows from static files to dynamic page renders
+
+## Infrastructure
+
+The application uses GitHub Actions for continuous deployment:
+
+GitHub Actions Resources:
+
+-   Workflow: `nextjs.yml`
+    -   Builds and deploys to GitHub Pages
+    -   Uses Node.js 20.x environment
+    -   Caches dependencies and build artifacts
+    -   Configures static site generation
+    -   Sets up GitHub Pages deployment

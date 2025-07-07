@@ -37,7 +37,7 @@ export const projects = {
             },
         ],
         live: "https://coca-project.site/",
-        images: [`/코카2/코카2_1.webp`, `/placeholder.svg`],
+        images: [`/코카2/코카2_1.webp`, `/코카2/코카2_2.webp`],
         longDescription:
             "기존 COCA 프로젝트의 기능을 개선하고, 배포와 함께 CI/CD 파이프라인을 구축하는 개인 프로젝트입니다.\n==테스트 계정==\nID : tester0000\nPWD : tester0000 ",
         features: [

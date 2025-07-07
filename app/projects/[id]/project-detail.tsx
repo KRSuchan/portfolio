@@ -150,22 +150,25 @@ export function ProjectDetail({ project }: { project: Project }) {
                                     )}
                                 </div>
 
-                                <div className="flex flex-wrap gap-2">
+                                <div className="flex flex-wrap gap-2 items-center">
                                     {project.live !== "#" && (
-                                        <Button
-                                            variant="outline"
-                                            size="icon"
-                                            onClick={(e) => {
-                                                e.preventDefault();
-                                                window.open(
-                                                    project.live,
-                                                    "_blank",
-                                                    "noopener,noreferrer"
-                                                );
-                                            }}
-                                        >
-                                            <ExternalLink className="w-4 h-4" />
-                                        </Button>
+                                        <>
+                                            <Button
+                                                variant="outline"
+                                                className="flex gap-2 items-center"
+                                                onClick={(e) => {
+                                                    e.preventDefault();
+                                                    window.open(
+                                                        project.live,
+                                                        "_blank",
+                                                        "noopener,noreferrer"
+                                                    );
+                                                }}
+                                            >
+                                                <div>웹페이지</div>
+                                                <ExternalLink className="w-4 h-4" />
+                                            </Button>
+                                        </>
                                     )}
                                 </div>
                             </div>
