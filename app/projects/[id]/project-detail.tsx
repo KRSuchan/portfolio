@@ -44,6 +44,7 @@ interface Project {
 
 export function ProjectDetail({ project }: { project: Project }) {
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
+    const [isModalOpen, setIsModalOpen] = useState(false);
 
     const nextImage = () => {
         setCurrentImageIndex((prev) => (prev + 1) % project.images.length);
@@ -67,7 +68,10 @@ export function ProjectDetail({ project }: { project: Project }) {
                     </Link>
 
                     <div className="grid lg:grid-cols-5 gap-8 mb-8 h-[70vh]">
-                        <div className="lg:col-span-3 relative rounded-lg overflow-hidden group">
+                        <div
+                            className="lg:col-span-3 relative rounded-lg overflow-hidden group cursor-pointer"
+                            onClick={() => setIsModalOpen(true)}
+                        >
                             <Image
                                 src={project.images[currentImageIndex]}
                                 alt={`${project.title} 이미지 ${
@@ -82,7 +86,10 @@ export function ProjectDetail({ project }: { project: Project }) {
                                         variant="ghost"
                                         size="icon"
                                         className="absolute left-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white opacity-0 group-hover:opacity-100 transition-opacity"
-                                        onClick={prevImage}
+                                        onClick={(e) => {
+                                            e.stopPropagation();
+                                            prevImage();
+                                        }}
                                     >
                                         <ChevronLeft className="w-6 h-6" />
                                     </Button>
@@ -90,7 +97,10 @@ export function ProjectDetail({ project }: { project: Project }) {
                                         variant="ghost"
                                         size="icon"
                                         className="absolute right-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white opacity-0 group-hover:opacity-100 transition-opacity"
-                                        onClick={nextImage}
+                                        onClick={(e) => {
+                                            e.stopPropagation();
+                                            nextImage();
+                                        }}
                                     >
                                         <ChevronRight className="w-6 h-6" />
                                     </Button>
@@ -103,9 +113,10 @@ export function ProjectDetail({ project }: { project: Project }) {
                                                         ? "bg-white"
                                                         : "bg-white/50"
                                                 }`}
-                                                onClick={() =>
-                                                    setCurrentImageIndex(index)
-                                                }
+                                                onClick={(e) => {
+                                                    e.stopPropagation();
+                                                    setCurrentImageIndex(index);
+                                                }}
                                             />
                                         ))}
                                     </div>
@@ -282,6 +293,54 @@ export function ProjectDetail({ project }: { project: Project }) {
                     </div>
                 </div>
             </div>
+
+            {isModalOpen && (
+                <div
+                    className="fixed inset-0 bg-black/80 flex items-center justify-center z-50"
+                    onClick={() => setIsModalOpen(false)}
+                >
+                    <div
+                        className="relative max-w-[90vw] max-h-[90vh]"
+                        onClick={(e) => e.stopPropagation()}
+                    >
+                        <Image
+                            src={project.images[currentImageIndex]}
+                            alt={`${project.title} 이미지 ${
+                                currentImageIndex + 1
+                            }`}
+                            width={1200}
+                            height={800}
+                            className="object-contain max-w-full max-h-full"
+                        />
+                        {project.images.length > 1 && (
+                            <>
+                                <Button
+                                    variant="ghost"
+                                    size="icon"
+                                    className="absolute left-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white"
+                                    onClick={prevImage}
+                                >
+                                    <ChevronLeft className="w-6 h-6" />
+                                </Button>
+                                <Button
+                                    variant="ghost"
+                                    size="icon"
+                                    className="absolute right-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white"
+                                    onClick={nextImage}
+                                >
+                                    <ChevronRight className="w-6 h-6" />
+                                </Button>
+                            </>
+                        )}
+                        <button
+                            className="absolute top-4 right-4 text-white bg-black/50 rounded-full w-8 h-8 flex items-center justify-center hover:bg-black/70"
+                            onClick={() => setIsModalOpen(false)}
+                        >
+                            ×
+                        </button>
+                    </div>
+                </div>
+            )}
         </>
     );
 }
