@@ -111,18 +111,18 @@ export default function Portfolio() {
                 <div className="grid md:grid-cols-2 gap-8">
                     <div>
                         <h3 className="text-xl font-semibold mb-4">소개</h3>
-                        <p className="text-muted-foreground whitespace-nowrap">
+                        <div className="text-muted-foreground ">
                             안녕하세요, 소프트웨어의 안정성과 효율성을 중시하는
                             웹 개발자 이수찬입니다. <br />
                             Java와 Spring Boot를 중심으로 웹 서비스의 구조를
                             설계하고 구현하는 데 관심이 많으며, <br />
-                            데이터베이스 설계와 API 개발 경험을 통해 백엔드
-                            시스템의 탄탄한 기반을 만드는 데 집중하고 있습니다.{" "}
+                            데이터베이스 설계와 API 개발 경험을 통해 시스템의
+                            탄탄한 기반을 만드는 데 집중하고 있습니다.
                             <br />
                             협업과 커뮤니케이션을 중요하게 생각하며, 함께
                             성장하는 개발자가 되고 싶습니다.
                             <br />
-                        </p>
+                        </div>
                     </div>
                     <div>
                         <h3 className="text-xl font-semibold mb-4">
